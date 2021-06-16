@@ -17,34 +17,34 @@ spec:
         app.kubernetes.io/name: recorder
     spec:
       containers:
-          image: quay.io/min_ji_gz_ibm/cloudnative/express-sample-app
-          imagePullPolicy: IfNotPresent
-          livenessProbe:
-            failureThreshold: 3
-            httpGet:
-              path: /
-              port: 8088
-              scheme: HTTP
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 1
-          name: recordor
-          ports:
-            - containerPort: 8088
-              name: http
-              protocol: TCP
-          readinessProbe:
-            failureThreshold: 3
-            httpGet:
-              path: /
-              port: http
-              scheme: HTTP
-            periodSeconds: 10
-            successThreshold: 1
-            timeoutSeconds: 1
-          resources: {}
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
+        image: quay.io/min_ji_gz_ibm/cloudnative/express-sample-app
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: 8088
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        name: recordor
+        ports:
+          - containerPort: 8088
+            name: http
+            protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /
+            port: http
+            scheme: HTTP
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
