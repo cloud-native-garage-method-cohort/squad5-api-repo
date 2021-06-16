@@ -75,7 +75,7 @@ spec:
          - build-image
        params:
          - name: image-with-tag
-           value: "quay.io/min_ji_gz_ibm/cloudnative/squad5=$(params.image-repo):$(tasks.squad5-fetch-repository.results.commit)"
+           value: "quay.io/min_ji_gz_ibm/cloudnative/squad5-api=$(params.image-repo):$(tasks.squad5-fetch-repository.results.commit)"
          - name: app-namespace
            value: miles-ji-pipeline-from-scratch
          - name: app-name

@@ -8,4 +8,4 @@ spec:
   workspaces:
     - name: pipeline-shared-data
       persistentVolumeClaim:
-        claimName: squad5-api-pvc
+        claimName: squad5-pvc
