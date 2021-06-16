@@ -3,9 +3,23 @@ kind: PipelineRun
 metadata:
   generateName: squad5-api-pipeline-run-
 spec:
+  serviceAccountName: build-bot
   pipelineRef:
     name: squad5-api-pipeline
   workspaces:
     - name: pipeline-shared-data
       persistentVolumeClaim:
         claimName: squad5-pvc
+  podTemplate:
+    # securityContext:
+    #   runAsNonRoot: true
+    #   runAsUser: 1001
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: NotIn
+              values:
+              - 10.5.197.56
