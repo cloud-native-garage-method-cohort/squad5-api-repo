@@ -108,7 +108,7 @@ spec:
          name: gitops
        params:
         - name: app-name
-          value: squad5-pipeline-from-scratch
+          value: squad5-api
         - name: sha
           value: "$(tasks.squad5-fetch-repository.results.commit)"
        workspaces:
