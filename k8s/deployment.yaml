@@ -8,16 +8,14 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app.kubernetes.io/instance: recorder
-      app.kubernetes.io/name: recorder
+      app: recorder
   template:
     metadata:
       labels:
-        app.kubernetes.io/instance: recorder
-        app.kubernetes.io/name: recorder
+        app: recorder
     spec:
       containers:
-        - image: quay.io/min_ji_gz_ibm/cloudnative/express-sample-app
+        - image: quay.io/min_ji_gz_ibm/cloudnative/squad5
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
