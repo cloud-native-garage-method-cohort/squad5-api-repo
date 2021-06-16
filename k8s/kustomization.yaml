@@ -6,5 +6,5 @@ resources:
   - route.yaml
 commonLabels:
   app: squad5-api-project-recorder
-  app.kubernetes.io/instance: squad5-project-recorder
-  app.kubernetes.io/name: squad5-project-recorder
+  app.kubernetes.io/instance: squad5-api-project-recorder
+  app.kubernetes.io/name: squad5-api-project-recorder
