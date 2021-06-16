@@ -1,0 +1,12 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: recorder
+spec:
+  to:
+    kind: Service
+    name: recorder
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None

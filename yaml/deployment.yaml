@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recorder
+spec:
+  selector:
+    matchLabels:
+      app: recorder
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: recorder
+    spec:
+      containers:
+        - name: recorder
+          image: quay.io/kiddlin/recorder
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          # env:
+          #   - name: NAME
+          #     value: VALUE
+          imagePullPolicy: Always
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 3
